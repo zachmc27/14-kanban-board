@@ -17,7 +17,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Serves static files in the entire client's dist folder
-app.use(express.static(path.resolve(__dirname, "client", "build")));
+app.use(express.static(path.resolve(__dirname, "client", "dist")));
 
 app.use(express.json());
 app.use(routes);
