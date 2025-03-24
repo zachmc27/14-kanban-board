@@ -6,7 +6,7 @@ dotenv.config();
 import express from 'express';
 import routes from './routes/index.js';
 import { sequelize } from './models/index.js';
-import path from "node:path";
+
 
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(routes);
 
 app.get("*", (_req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+  res.sendFile('../client/dist/index.html');
 });
 
 sequelize.sync({force: forceDatabaseRefresh}).then(() => {
