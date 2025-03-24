@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(routes);
 
 app.get("*", (_req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 });
 
 sequelize.sync({force: forceDatabaseRefresh}).then(() => {
